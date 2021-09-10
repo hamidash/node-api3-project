@@ -82,7 +82,7 @@ describe('server.js', () => {
     })
     it('responds with the newly updated user', async () => {
       let res = await request(server).put('/api/users/1').send({ name: 'FRODO BAGGINS' })
-      expect(res.body).toMatchObject({ id: 1, name: 'FRODO BAGGINS' })
+      expect(res.body).toMatchObject({ id: "1", name: 'FRODO BAGGINS' })
     })
     it('responds with a 404 if user id does not exist', async () => {
       let res = await request(server).put('/api/users/111').send({ name: 'FRODO BAGGINS' })
